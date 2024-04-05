@@ -7,7 +7,7 @@ import java.util.Queue;
 public class WordLadder127 {
 
     public int ladderLength(String start ,String end,String[] dic) {
-        int result = 0;
+        int result = 1;
         HashSet<String> holder = new HashSet<>();
         for (String x : dic) {
             holder.add(x);
@@ -21,25 +21,27 @@ public class WordLadder127 {
         Queue<String> q = new LinkedList();
         q.add(start);
 
-        while (q.isEmpty() == false) {
-            for (int k = 0; k < q.size(); k++) {
+        while (!q.isEmpty() ) {
+            int size =  q.size();
+            for (int k = 0; k < size; k++) {
                 String word = q.poll();
                 char[] current = word.toCharArray();
                 for (int i = 0; i < word.length(); i++) {
                     char restore = current[i];
                     for (char ch = 'a'; ch <= 'z'; ch++) {
                         if(ch == restore)
-//                        if(ch == current[i])
                             continue;
                         current[i] = ch;
                         String cand = new String(current);
+                        if (cand.equals(end)) {
+                            return result+1;
+                        }
+
                         if (holder.contains(cand)) {
                            q.add(cand);
                            holder.remove(cand);
                         }
-                        if (cand.equals(end)) {
-                            return result+1;
-                        }
+
                     }
                     current[i] = restore;
                 }

@@ -39,6 +39,7 @@ public class MyLeet212 {
         build.append(current);
         if (trie.isWord) {
             result.add(build.toString());
+            trie.isWord = false ;// to avoid double counting
         }
 
         int[][] dxdy = {
