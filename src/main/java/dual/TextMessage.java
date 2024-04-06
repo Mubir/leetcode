@@ -1,3 +1,5 @@
+package dual;
+
 import java.util.ArrayList;
 
 public class TextMessage {

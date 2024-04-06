@@ -1,3 +1,5 @@
+package dual;
+
 import java.util.ArrayList;
 import java.util.List;
 

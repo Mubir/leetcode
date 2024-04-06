@@ -1,4 +1,4 @@
-package V2;
+package dual;
 
 import java.util.ArrayList;
 import java.util.List;
