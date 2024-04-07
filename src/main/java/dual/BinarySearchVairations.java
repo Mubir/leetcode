@@ -45,6 +45,8 @@ public class BinarySearchVairations {
         int index = -1;
         while (left <= right) {
             int mid = left + (right - left + 1) / 2;
+            // so change found using both alternatively
+            //int mid = left + (right - left) / 2;
             if (arr[mid] == cand) {
                 index = mid;
                 right = mid - 1;
@@ -65,6 +67,7 @@ public class BinarySearchVairations {
         int index = -1;
         while (left <= right) {
             int mid = left + (right - left + 1) / 2;
+            //int mid = left + (right - left) / 2;
             if (arr[mid] == cand) {
                 index = mid;
                 left = mid + 1;
@@ -77,6 +80,52 @@ public class BinarySearchVairations {
 
         return index;
     }
+
+    // 2, 3, 3, 5, 5, 5, 6, 6  and 6 result = index of  first 6
+    int leastIntegerGreaterThanKey(int[] arr, int cand) {
+
+        int left = 0;
+        int right = arr.length;
+        int index = -1;
+        while (left <= right) {
+            int mid = left + (right - left + 1) / 2;
+            //int mid = left + (right - left) / 2;
+            if (arr[mid] == cand) {
+                left = mid + 1;
+            } else if (arr[mid] < cand) {
+                left = mid + 1;
+            } else {
+                index = mid;
+                right = mid - 1;
+            }
+        }
+
+        return index;
+    }
+
+
+    int greatestIntegerLesserThanKey(int[] arr, int cand) {
+
+        int left = 0;
+        int right = arr.length;
+        int index = -1;
+        while (left <= right) {
+            int mid = left + (right - left + 1) / 2;
+            //int mid = left + (right - left) / 2;
+            if (arr[mid] == cand) {
+                right = mid - 1;
+            } else if (arr[mid] < cand) {
+                index = mid;
+                left = mid + 1;
+            } else {
+
+                right = mid - 1;
+            }
+        }
+
+        return index;
+    }
+
     public static void main(String[] args) {
         BinarySearchVairations search = new BinarySearchVairations();
         int arr[] = {2, 3, 3, 5, 5, 5, 6, 6, 7, 8,
@@ -92,5 +141,13 @@ public class BinarySearchVairations {
         System.out.println(search.lastSeen(arr, 5)); // 5
         System.out.println(search.lastSeen(arr, 9)); // 12
         System.out.println(search.lastSeen(arr, 555)); // -1
+        System.out.println("***** leastIntegerGreaterThanKey() check *****");
+        System.out.println(search.leastIntegerGreaterThanKey(arr, 5)); // 6
+        System.out.println(search.leastIntegerGreaterThanKey(arr, 9)); // 13
+        System.out.println(search.leastIntegerGreaterThanKey(arr, 555)); // -1
+        System.out.println("***** leastIntegerGreaterThanKey() check *****");
+        System.out.println(search.greatestIntegerLesserThanKey(arr, 5)); // 2
+        System.out.println(search.greatestIntegerLesserThanKey(arr, 9)); // 10
+        System.out.println(search.greatestIntegerLesserThanKey(arr, 555)); // -1
     }
 }

@@ -1,10 +1,12 @@
 package dual;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Circle {
     public static void main(String[] args) {
-        List<Integer> numbers = List.of(13, 5604, 31, 2, 13, 4560, 546, 654, 456);
+        List<Integer> numbers =  new ArrayList<>(Arrays.asList(13, 5604, 31, 2, 13, 4560, 546, 654, 456));
         int pairsFound = 0;
 
         for (int i = 0; i < numbers.size(); i++) {
