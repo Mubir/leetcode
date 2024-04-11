@@ -15,7 +15,8 @@ public class LC877StoneGame_I {
         if (dp[start][end] != 0)
             return dp[start][end];
         // max as have to find out the optimal for current player
-        // (-) as two player . so current one
+        // (-) as two player . so current one gets and next state for
+        // 2nd player and not added to current player.
         return dp[start][end] = Math.max(
                 stones[start] - dpHelper(stones, start + 1, end, dp),
                 stones[end] - dpHelper(stones, start, end - 1, dp));
