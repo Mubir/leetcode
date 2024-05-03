@@ -8,7 +8,7 @@ public class LC1662 {
         StringBuilder sbTwo = new StringBuilder();
         int i = 0;
         while (word1.length > i) {
-             sbOne.append(word1[i]);
+            sbOne.append(word1[i]);
             i++;
         }
         i = 0;
@@ -20,9 +20,8 @@ public class LC1662 {
     }
 
     public static void main(String[] args) {
-        System.out.println(arrayStringsAreEqual(new String[]{"abc", "d", "defg"},new String[]{"abcddefg"}));
-        System.out.println(arrayStringsAreEqual(new String[]{"a", "cb"},new String[]{"ab", "c"}));
-
+        System.out.println(arrayStringsAreEqual(new String[]{"abc", "d", "defg"}, new String[]{"abcddefg"}));
+        System.out.println(arrayStringsAreEqual(new String[]{"a", "cb"}, new String[]{"ab", "c"}));
 
     }
 }

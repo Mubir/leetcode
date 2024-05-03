@@ -53,6 +53,11 @@ public class WordLadder_II126 {
                                 Q.add(buildString);
 
                             } else if (visitedWithLevel.get(buildString) == visitedWithLevel.get(current) + 1) {
+                                // lot , cog --> log
+                                // cog -> log
+                                // lot -> log
+                                // so dekte hobe cog,lot teke log hote level eki take kina
+                                // takle log can be part of both cog&lot.
                                 adjList.get(current).add(buildString);
                             }
                         }
@@ -132,7 +137,6 @@ public class WordLadder_II126 {
         wordList.add("hot");
 
         wordList.add("dog");
-
 
 
         System.out.println(obj.findLadders(beginWord3, endWord3, wordList3));

@@ -1,6 +1,7 @@
 package LC;
 
 public class MaximumSumCircularSubarray918 {
+    // https://www.geeksforgeeks.org/maximum-contiguous-circular-sum/
     public int maxSubarraySumCircular(int[] A) {
         int total = 0;
         int currentMin = 0;
@@ -13,6 +14,7 @@ public class MaximumSumCircularSubarray918 {
 
             // Kadane's Algorithm to find Minimum subarray
             // sum.
+            //min/max(a[i], dp[i - 1]+a[i])
             currentMin = Math.min(x, currentMin + x);
             if (currentMin < totalMin) {
                 totalMin = currentMin;

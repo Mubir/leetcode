@@ -9,23 +9,22 @@ public class LC126 {
         Queue<String> q = new LinkedList<String>();
         HashSet<String> words = new HashSet<String>();
 
-        for(String x:wordList)
-        {
+        for (String x : wordList) {
             words.add(x);
         }
 
         q.add(beginWord);
 
-        while(!q.isEmpty())
-        {
+        while (!q.isEmpty()) {
             int levelSize = q.size();
-            for(int i = 0;i<levelSize;i++) {
+            for (int i = 0; i < levelSize; i++) {
                 String currentWord = q.poll();
             }
         }
 
         return new ArrayList<>();
     }
+
     public static void main(String[] args) {
 
     }

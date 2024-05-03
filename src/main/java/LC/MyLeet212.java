@@ -39,7 +39,7 @@ public class MyLeet212 {
         build.append(current);
         if (trie.isWord) {
             result.add(build.toString());
-            trie.isWord = false ;// to avoid double counting
+            trie.isWord = false;// to avoid double counting
         }
 
         int[][] dxdy = {
@@ -55,7 +55,7 @@ public class MyLeet212 {
         }
 
         board[i][j] = current;
-        build.deleteCharAt(build.length()-1);
+        build.deleteCharAt(build.length() - 1);
     }
 
     MyTrieNode buildTrie(String[] strings) {
@@ -102,8 +102,8 @@ public class MyLeet212 {
         String[] words3 = {"abcb"};
         System.out.println(wordSearch.findWords(board3, words3)); // Output: []
 
-        char[][] board4 = {{'o','a','b','n'},{'o','t','a','e'},{'a','h','k','r'},{'a','f','l','v'}};
-        String[] words4 = {"oa","oaa"};
+        char[][] board4 = {{'o', 'a', 'b', 'n'}, {'o', 't', 'a', 'e'}, {'a', 'h', 'k', 'r'}, {'a', 'f', 'l', 'v'}};
+        String[] words4 = {"oa", "oaa"};
         System.out.println(wordSearch.findWords(board4, words4));
     }
 }

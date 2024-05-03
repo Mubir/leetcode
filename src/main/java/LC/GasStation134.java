@@ -11,7 +11,7 @@ public class GasStation134 {
         int end = 1;
         petrol = gas[0] - cost[0];
         while (start != end || petrol < 0) {
-            while ( petrol < 0 && start != end) {
+            while (petrol < 0 && start != end) {
                 petrol = petrol - (gas[start] - cost[start]);
                 start = (start + 1) % size;
 

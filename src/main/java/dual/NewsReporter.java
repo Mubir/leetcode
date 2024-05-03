@@ -7,7 +7,7 @@ public class NewsReporter {
 
     static List<String> news(String str, int sz) {
         List<String> result = new ArrayList<String>();
-        result.add("*".repeat(sz));
+       // result.add("*".repeat(sz));
         int rSz = sz - 2;
         int remaining = rSz;
         Boolean addMe = false;
@@ -37,7 +37,7 @@ public class NewsReporter {
             }
 
             if (addMe) {
-                result.add("*" + sb.toString() + " ".repeat(remaining) + "*");
+             //   result.add("*" + sb.toString() + " ".repeat(remaining) + "*");
                 sb.delete(0, sb.length());
                 addMe = false;
                 remaining = rSz;
@@ -45,8 +45,8 @@ public class NewsReporter {
                 remaining = remaining - (temp.length() + 1);
             }
         }
-        result.add("*" + temp + " ".repeat(remaining + 1) + "*");
-        result.add("*".repeat(sz));
+       // result.add("*" + temp + " ".repeat(remaining + 1) + "*");
+      //  result.add("*".repeat(sz));
         return result;
     }
 

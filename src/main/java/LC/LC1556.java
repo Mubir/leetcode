@@ -8,8 +8,8 @@ public class LC1556 {
 
         while (n != 0) {
             int current = n % 10;
-             n = n / 10;
-            if (i!=0 && i % 3 == 0) {
+            n = n / 10;
+            if (i != 0 && i % 3 == 0) {
                 sb.append('.');
             }
             i++;

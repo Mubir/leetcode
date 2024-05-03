@@ -8,7 +8,7 @@ public class LC1844 {
         StringBuilder sb = new StringBuilder();
 
         while (i <= sz) {
-             int c = s.charAt(i - 1) - '0';
+            int c = s.charAt(i - 1) - '0';
             int inc = s.charAt(i) - '0';
             char current = (char) (c + inc + '0');
             sb.append(s.charAt(i - 1)).append(current);
